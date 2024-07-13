@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Recetas{% endblock title %}
+{% block content %}
+    <div class="py-4">
+        <h2 class="display-5">Escoge tu receta</h2>
+    </div>
+    <div>
+        <ul class="list-group">
+            {% for receta in recetas %}
+            <li class="list-group-item text-secondary">
+                <a class="text-secondary" href="receta/{{receta.id}}">{{ receta | capfirst }}</a>
+                <p class="text-success">{{ receta.get_type_display }}</p>
+            </li>
+        </ul>
+    </div>
+    {% endfor %}
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}{{ recetas }}{% endblock title %}
+
+{% block content %}
+    <h1 class="display-5 py-4">Has elegido la receta de {{ receta | capfirst }}</h1>
+    <h1 class="display-6">Características:</h1>
+    <ul class="list-group py-4">
+        <li class="list-group-item">Tipo: {{receta.get_type_display}}</li>
+        <li class="list-group-item">Ingredientes: {{receta.ingredients}}</li>
+    </ul>
+{% endblock content %}
